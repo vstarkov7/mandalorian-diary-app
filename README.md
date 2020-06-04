@@ -85,6 +85,8 @@ PUT /topics/:id - update a topic.
 
 DELETE /topics/:id - delete a topic
 
+GET /users/:user_id/posts/:post_id/topics/ - get all topics of a post
+
 ## Explanation of Major Challenges Expected
 
 I've never built a full-stack app on my own yet, so just using Ruby on Rails to build models and routes and connect them all to each other so they fit well will be a challenge.
