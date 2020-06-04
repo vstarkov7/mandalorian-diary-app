@@ -97,15 +97,15 @@ For Material UI, I worked with it a bit for P3, but still don't have enough expe
 
 	| Component | Priority | Estimated Time | Actual Time |
 	| --- | :---: |  :---: | :---: | 
-	| Setting up Models | H | 2hrs|  |
-	| Setting up Routes | H | 2hrs|  |
-	| Setting up Auth   | H | 2hrs|  |
-	| Testing Back End  | H | 2hrs|  |
-	| Starting the React App | H | 1hrs|  |
-	| Working on the Header.js file | H | 2hrs|  |
-	| Working on the Body.js file | H | 4hrs|  |
-	| Setting up Axios and API | H | 2hrs|  |
-	| Testing React App | H | 2hrs|  |
-	| Making Everything Pretty with CSS | H | 1 day|  |
-	| Total | H | 6hrs| 5hrs | 
+	| Setting up Models                 | H | 2hrs|      |
+	| Setting up Routes                 | H | 2hrs|      |
+	| Setting up Auth                   | H | 2hrs|      |
+	| Testing Back End                  | H | 2hrs|      |
+	| Starting the React App            | H | 1hrs|      | 
+	| Working on the Header.js file     | H | 2hrs|      |
+	| Working on the Body.js file       | H | 4hrs|      |
+	| Setting up Axios and API          | H | 2hrs|      |
+	| Testing React App                 | H | 2hrs|      |
+	| Making Everything Pretty with CSS | H | 12 hrs|    |
+	| Total                             | H | 31hrs| hrs | 
 	 
