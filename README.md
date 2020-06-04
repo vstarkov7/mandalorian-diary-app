@@ -33,7 +33,7 @@ If they click on 'New Entry', they will see the following page, where they can f
 ![New Entry Screen](https://i.imgur.com/AjpndVd.png)
 
 If they click on the Topics dropdown, they will see the topics they can choose from. For post MVP, the 'New Topics' link will allow them to go to a page where they can add, edit or delete the topics to choose from.
-![New Entry Screen with Topics Dropdown](https://i.imgur.com/MfiomHz.png)
+![New Entry Screen with Topics Dropdown](https://i.imgur.com/tlHQwBJ.png)
 
 Once topics are chosen, this is how they will look.
 ![New Entry Screen with Topics Chosen](https://i.imgur.com/6PKDzbC.png)
