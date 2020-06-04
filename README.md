@@ -56,21 +56,33 @@ Javascript, REACT.js, RESTful APIs, Ruby on Rails, HTML, CSS (Material UI for po
 ## List of server side routes
 
 For user:
+
 GET /users/:id - select a user.
+
 POST /users/ - create a user.
 
 For entries:
+
 GET /users/:user_id/posts - select a user's entries.
+
 GET /users/:user_id/posts/:id - select a particular user's entry.
+
 POST /users/:user_id/posts - create an entry.
+
 PUT /users/:user_id/posts/:id - update an entry.
+
 DELETE /users/:user_id/posts/:id - delete an entry.
 
 For topics: 
+
 GET /topics - select all topics.
+
 POST /topics - create a new topic.
+
 GET /topics/:id - select a topic.
+
 PUT /topics/:id - update a topic.
+
 DELETE /topics/:id - delete a topic
 
 ## Explanation of Major Challenges Expected
