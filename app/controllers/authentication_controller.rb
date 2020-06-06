@@ -14,7 +14,7 @@ class AuthenticationController < ApplicationController
   
   # GET /auth/verify
   def verify
-    render json: @current_user, status: :ok
+    render json: @current_user.frontend_data, status: :ok
   end
 
 
