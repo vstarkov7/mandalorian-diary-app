@@ -15,8 +15,8 @@ nature = Topic.create!(name:"Nature")
 
 p "#{Topic.count} topics were created"
 
-Post.create!(title: 'Footy', topics: [sports])
-Post.create!(title: 'yo', topics: [politics])
-Post.create!(title: 'hahaha', topics: [politics, sports])
+footy = Post.create!(title: 'Footy', topics: [sports])
+yo = Post.create!(title: 'yo', topics: [politics])
+haha = Post.create!(title: 'hahaha', topics: [politics, sports])
 
 p "#{Post.count} posts were created"

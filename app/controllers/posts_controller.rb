@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :update, :destroy]
+  before_action :set_post, only: [:show, :update, :destroy, :add_topic]
 
   # GET /posts
   def index
@@ -36,6 +36,12 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   def destroy
     @post.destroy
+  end
+
+  def add_topic
+    @topic = Topic.find(params[:topic_id])
+    @post.topics << @topic
+    render json: @post, include: :topics
   end
 
   private
