@@ -44,6 +44,11 @@ export const readOneTopic = async (id) => {
   return res.data;
 }
 
+export const putPostTopic = async (topicId, id) => {
+  const res = await api.get(`/topics/${topicId}/foods/${id}`)
+  return res.data
+}
+
 // export const createTopic = async (topicData) => {
 //   const res = await api.post('/topics', { topic: topicData });
 //   return res.data
@@ -54,23 +59,23 @@ export const readAllPost = async (id) => {
   return res.data;
 }
 
-export const readOnePost = async (user_id, post_id) => {
-  const res = await api.get(`/users/${user_id}/posts/${post_id}`);
+export const readOnePost = async (userId, id) => {
+  const res = await api.get(`/users/${userId}/posts/${id}`);
   return res.data;
 }
 
-export const createPost = async (id, postData) => {
+export const createPost = async (postData, id) => {
   const res = await api.post(`/users/${id}/posts`, { post: postData });
   return res.data;
 }
 
-export const updatePost = async (user_id, post_id, postData) => {
-  const res = await api.put(`/users/${user_id}/posts/${post_id}`, { post: postData });
+export const updatePost = async (postData, userId, id) => {
+  const res = await api.put(`/users/${userId}/posts/${id}`, { post: postData });
   return res.data;
 }
 
-export const destroyPost = async (user_id, post_id) => {
-  const res = await api.delete(`/users/${user_id}/posts/${post_id}`);
+export const destroyPost = async (userId, id) => {
+  const res = await api.delete(`/users/${userId}/posts/${id}`);
   return res.data
 }
 
