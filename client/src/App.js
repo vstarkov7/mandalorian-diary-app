@@ -5,6 +5,8 @@ import './App.css';
 import PostsIndex from './components/PostsIndex.jsx'
 import Register from './components/Register.jsx'
 import Login from './components/Login.jsx'
+import ShowPosts from './components/ShowPosts.jsx'
+import CreatePost from './components/CreatePost.jsx'
 import { readAllTopic, readOneTopic, readAllPost, readOnePost, createPost, updatePost, destroyPost, putPostTopic, loginUser, registerUser, verifyUser, removeToken } from './services/api-helper';
 import { NavLink } from 'react-router-dom';
 
@@ -66,11 +68,11 @@ class App extends Component {
     this.setState({ postItem });
   }
 
-  addPost = async (id) => {
-    const newPost = await createPost(this.state.formData, id)
+  addPost = async () => {
+    const newPost = await createPost(this.state.postFormData, this.state.currentUser.id)
     this.setState(prevState => ({
       posts: [...prevState.posts, newPost],
-      formData: {
+      postFormData: {
         title: "",
         content: ""
       }
@@ -87,8 +89,8 @@ class App extends Component {
   }
 
 
-  deletePost = async (userId, postItem) => {
-    await destroyPost(userId, postItem.id);
+  deletePost = async (postItem) => {
+    await destroyPost(this.state.currentUser.id, postItem.id);
     this.setState(prevState => ({
       posts: prevState.posts.filter(singlePost => singlePost.id !== postItem.id)
     }))
@@ -96,7 +98,12 @@ class App extends Component {
 
   handleChange = (e) => {
     const { name, value } = e.target;
-    this.setState({ postFormData: { [name]: value } });
+    this.setState(prevState => ({
+      postFormData: {
+        ...prevState.postFormData,
+        [name]: value
+      }
+    }));
   }
 
   setPostForm = (post) => {
@@ -171,9 +178,9 @@ class App extends Component {
               {/* This is a greeting to the user if there user info has been set in state.
               We use the guard operator to check '&&' */}
               <h3>Hi {this.state.currentUser.first_name && this.state.currentUser.email}<button onClick={this.handleLogout}>logout</button></h3>
-              <Link to="/food">View All Food</Link>
+              <Link to="/posts">View All Posts</Link>
               &nbsp;
-              <Link to="/flavors">View All Flavors</Link>
+              <Link to="/create-post">Create a New Post</Link>
               <hr />
             </div>
             :
@@ -194,6 +201,31 @@ class App extends Component {
             handleRegister={this.handleRegister}
             handleChange={this.authHandleChange}
             formData={this.state.authFormData} />)} />
+        <Route exact path="/posts" render={(props) => (
+          <ShowPosts
+            user={this.state.currentUser}
+            posts={this.state.posts}
+            formData={this.state.postFormData}
+            getPosts={this.getPosts}
+            getPostItem={this.getPostItem}
+            deletePost={this.deletePost}
+            handleSubmit={this.addPost}
+            handleChange={this.handleChange}
+            setPostForm={this.setPostForm}
+            updatePost={this.updatePost}
+          />)} />
+        <Route exact path="/create-post" render={(props) => (
+          <CreatePost
+            user={this.state.currentUser}
+            posts={this.state.posts}
+            formData={this.state.postFormData}
+            getPostItem={this.getPostItem}
+            deletePost={this.deletePost}
+            handleSubmit={this.addPost}
+            handleChange={this.handleChange}
+            setPostForm={this.setPostForm}
+            updatePost={this.updatePost}
+          />)} />
         <Route path='/topics' render={() => (
           <PostsIndex
             posts={this.state.posts}
