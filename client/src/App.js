@@ -3,6 +3,8 @@ import { Route, Link, Switch } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import './App.css';
 import PostsIndex from './components/PostsIndex.jsx'
+import Register from './components/Register.jsx'
+import Login from './components/Login.jsx'
 import { readAllTopic, readOneTopic, readAllPost, readOnePost, createPost, updatePost, destroyPost, putPostTopic, loginUser, registerUser, verifyUser, removeToken } from './services/api-helper';
 import { NavLink } from 'react-router-dom';
 
@@ -182,7 +184,16 @@ class App extends Component {
           }
         </header>
         <h1>Test</h1>
-
+        <Route exact path="/login" render={(props) => (
+          <Login
+            handleLogin={this.handleLogin}
+            handleChange={this.authHandleChange}
+            formData={this.state.authFormData} />)} />
+        <Route exact path="/register" render={(props) => (
+          <Register
+            handleRegister={this.handleRegister}
+            handleChange={this.authHandleChange}
+            formData={this.state.authFormData} />)} />
         <Route path='/topics' render={() => (
           <PostsIndex
             posts={this.state.posts}
@@ -194,4 +205,4 @@ class App extends Component {
 
 }
 
-export default App;
+export default withRouter(App);
