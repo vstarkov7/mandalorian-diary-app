@@ -45,7 +45,12 @@ export const readOneTopic = async (id) => {
 }
 
 export const putPostTopic = async (topicId, id) => {
-  const res = await api.get(`/topics/${topicId}/foods/${id}`)
+  const res = await api.get(`/topics/${topicId}/posts/${id}`)
+  return res.data
+}
+
+export const findPostTopics = async (id) => {
+  const res = await api.get(`/topics/posts/${id}`)
   return res.data
 }
 

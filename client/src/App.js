@@ -3,11 +3,12 @@ import { Route, Link, Switch } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import './App.css';
 import PostsIndex from './components/PostsIndex.jsx'
+import PostTopic from './components/PostTopic.jsx'
 import Register from './components/Register.jsx'
 import Login from './components/Login.jsx'
 import ShowPosts from './components/ShowPosts.jsx'
 import CreatePost from './components/CreatePost.jsx'
-import { readAllTopic, readOneTopic, readAllPost, readOnePost, createPost, updatePost, destroyPost, putPostTopic, loginUser, registerUser, verifyUser, removeToken } from './services/api-helper';
+import { readAllTopic, readOneTopic, readAllPost, readOnePost, createPost, updatePost, destroyPost, putPostTopic, loginUser, registerUser, verifyUser, removeToken, findPostTopics } from './services/api-helper';
 import { NavLink } from 'react-router-dom';
 
 class App extends Component {
@@ -33,7 +34,8 @@ class App extends Component {
         last_name: "",
         password: ""
       },
-      selectedTopic: ''
+      selectedTopic: '',
+      foundTopics: []
     }
   }
 
@@ -63,8 +65,8 @@ class App extends Component {
     this.setState({ posts });
   }
 
-  getPostItem = async (userId, id) => {
-    const postItem = await readOnePost(userId, id);
+  getPostItem = async (id) => {
+    const postItem = await readOnePost(this.state.currentUser.id, id);
     this.setState({ postItem });
   }
 
@@ -79,8 +81,8 @@ class App extends Component {
     }))
   }
 
-  putPost = async (userId, postItem) => {
-    const updatedPostItem = await this.updatePost(this.state.formData, userId, postItem.id);
+  putPost = async (postItem) => {
+    const updatedPostItem = await updatePost(this.state.postFormData, this.state.currentUser.id, postItem.id);
     this.setState(prevState => ({
       posts: prevState.posts.map(singlePost => {
         return singlePost.id === postItem.id ? updatedPostItem : singlePost
@@ -117,10 +119,17 @@ class App extends Component {
 
   addTopicToPost = async (postItem) => {
     const newTopic = this.state.topics.find(topic => topic.name === this.state.selectedTopic);
-    const newPostItem = await putPostTopic(postItem.id, newTopic.id);
+    const newPostItem = await putPostTopic(newTopic.id, postItem.id);
     this.setState({
       postItem: newPostItem
     })
+  }
+
+  findTopics = async (id) => {
+    const foundTopics = await findPostTopics(id);
+    this.setState({
+      foundTopics
+    });
   }
 
   topicForm = (e) => {
@@ -206,13 +215,15 @@ class App extends Component {
             user={this.state.currentUser}
             posts={this.state.posts}
             formData={this.state.postFormData}
+            foundTopics={this.state.foundTopics}
             getPosts={this.getPosts}
             getPostItem={this.getPostItem}
             deletePost={this.deletePost}
             handleSubmit={this.addPost}
             handleChange={this.handleChange}
             setPostForm={this.setPostForm}
-            updatePost={this.updatePost}
+            updatePost={this.putPost}
+            findTopics={this.findTopics}
           />)} />
         <Route exact path="/create-post" render={(props) => (
           <CreatePost
@@ -231,6 +242,14 @@ class App extends Component {
             posts={this.state.posts}
           />
         )} />
+        <Route exact path="/posts/add-topic" render={(props) => (
+          <PostTopic
+            postItem={this.state.postItem}
+            topics={this.state.topics}
+            foundTopics={this.state.foundTopics}
+            selectedTopic={this.state.selectedTopic}
+            handleChange={this.topicForm}
+            addTopicToPost={this.addTopicToPost} />)} />
       </div>
     );
   }

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/topics/:topic_id/posts/:id', to: 'posts#add_topic'
+  get '/topics/posts/:id', to: 'posts#find_topic'
   resources :topics
   resources :users do
     resources :posts, only: [:index, :show, :create, :update, :destroy]

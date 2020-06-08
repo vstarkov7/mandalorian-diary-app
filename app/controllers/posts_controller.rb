@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :update, :destroy, :add_topic]
+  before_action :set_post, only: [:show, :update, :destroy, :add_topic, :find_topic]
   before_action :set_user, only: [:index, :create]
   before_action :authorize_request
 
@@ -45,6 +45,11 @@ class PostsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @post.topics << @topic
     render json: @post, include: :topics
+  end
+
+  def find_topic
+    @topics = @post.topics
+    render json: @topics
   end
 
   private
