@@ -172,7 +172,7 @@ class App extends Component {
   }
 
   handleSubmitPost = () => {
-    this.props.history.push("/posts")
+    this.props.history.push("/")
   }
 
   authHandleChange = (e) => {
