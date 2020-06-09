@@ -128,6 +128,7 @@ Total                             | H | 34hrs| 57hrs
 ## Deployed Site
 
 Deployed front end on netlify: [https://mandalorian-diary.netlify.app/](https://mandalorian-diary.netlify.app/)
+
 Deployed back end on heroku: [https://mandalorian-diary-app.herokuapp.com](https://mandalorian-diary-app.herokuapp.com)
 
 ## Installation 
