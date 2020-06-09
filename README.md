@@ -45,11 +45,17 @@ If a user clicks on the Edit link for any of their entries, they will see the Ed
 
 ## Component hierarchy
 
+Proposed:
+
 ![Component Hierarchy Diagram](https://i.imgur.com/L0VHvfH.jpg)
+
+Updated (currently in production):
+
+![Component Hierarchy Diagram](https://i.imgur.com/Lj2WVQN.jpg)
 
 ## ERD
 
-![The ERD Diagram for the app](https://i.imgur.com/z6X5LOP.png)
+![The ERD Diagram for the app](https://i.imgur.com/MomVrN3.png)
 
 ## Technologies Used
 
