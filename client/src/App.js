@@ -50,6 +50,10 @@ class App extends Component {
     this.props.history.push("/login")
   }
 
+  handleRegisterButton = () => {
+    this.props.history.push("/register")
+  }
+
   getTopics = async () => {
     const topics = await readAllTopic();
     this.setState({ topics });
@@ -178,7 +182,7 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <Link to="/"><h1>Home</h1></Link>
+          <Link to="/"><h1>Mandalorian Diary App</h1></Link>
           {/* Here we use a terinary to check if there is a logged in user set in state.
               If there is no logged in user, we show a login button instead of the site nav */}
           {this.state.currentUser
@@ -186,20 +190,19 @@ class App extends Component {
             <div>
               {/* This is a greeting to the user if there user info has been set in state.
               We use the guard operator to check '&&' */}
-              <h3>Hi {this.state.currentUser.first_name && this.state.currentUser.email}<button onClick={this.handleLogout}>logout</button></h3>
-              <Link to="/posts">View All Posts</Link>
+              <div className="welcome">Hi {this.state.currentUser.first_name && this.state.currentUser.email}<button className="logout_button" onClick={this.handleLogout}>Logout</button></div>
+              <Link className="nav_link" to="/posts">View All Posts</Link>
               &nbsp;
-              <Link to="/create-post">Create a New Post</Link>
+              <Link className="nav_link" to="/create-post">Create a New Post</Link>
               <hr />
             </div>
             :
             <div>
-              <button onClick={this.handleLoginButton}>Login/register</button>
-              <button onClick={this.handleLoginButton}>Login/register</button>
+              <button className="auth_button" onClick={this.handleLoginButton}>Login</button>
+              <button className="auth_button" onClick={this.handleRegisterButton}>Register</button>
             </div>
           }
         </header>
-        <h1>Test</h1>
         <Route exact path="/login" render={(props) => (
           <Login
             handleLogin={this.handleLogin}

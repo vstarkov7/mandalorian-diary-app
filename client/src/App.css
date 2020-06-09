@@ -7,6 +7,107 @@
   pointer-events: none;
 }
 
+.login {
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto 2vh auto;
+}
+
+.register {
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto 2vh auto;
+}
+
+.create_post {
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto 2vh auto;
+}
+
+.auth_button {
+  width: 20vh;
+  margin: 0 1vh 0 1vh;
+}
+
+.register_link {
+  margin-top: 3vh;
+}
+
+.welcome {
+  font-size: 4vh;
+  text-align: center;
+  margin-bottom: 3vh;
+}
+
+.logout_button {
+  margin-left: 5vh;
+}
+
+.nav_link {
+  text-decoration: none;
+  margin: 0 3vh 0 3vh;
+  font-size: 3vh;
+}
+
+.show_post {
+  border: 1px solid black;
+  border-radius: 3vh;
+  margin: 2vh;
+  padding-bottom: 2vh;
+}
+
+.post_options {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.post_options a {
+  text-decoration: none;
+  margin-bottom: 1vh;
+}
+
+.post_options button {
+  margin-bottom: 1vh;
+  width: 10vh;
+}
+
+.content_entry {
+  width: 30vh;
+  height: 10vh;
+}
+
+.show_topics {
+  margin-bottom: 0.2vh;
+}
+
+.associated_topics {
+  font-size: 2vh;
+  margin-bottom: 1vh;
+}
+
+.add_topic_button {
+  margin-top: 2vh;
+}
+
+.topic_select {
+  margin-top: 2vh;
+  margin-right: 1vh;
+}
+/* .login label {
+  display: flex;
+  flex-flow: column;
+  margin-left: 5vh; 
+} */
+
+/* .login form{
+  display: flex;
+  flex-flow: column;
+  margin: 0 0 5vh 5vh;
+}  */
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -36,3 +137,4 @@
     transform: rotate(360deg);
   }
 }
+
