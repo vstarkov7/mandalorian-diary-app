@@ -190,13 +190,9 @@ class App extends Component {
       <div className="App">
         <header>
           <Link className="main_title_link" to="/"><h1>Mandalorian Diary App</h1></Link>
-          {/* Here we use a terinary to check if there is a logged in user set in state.
-              If there is no logged in user, we show a login button instead of the site nav */}
           {this.state.currentUser
             ?
             <div>
-              {/* This is a greeting to the user if there user info has been set in state.
-              We use the guard operator to check '&&' */}
               <div className="welcome">Hi {this.state.currentUser.email && this.state.currentUser.first_name}!<button className="logout_button" onClick={this.handleLogout}>Logout</button></div>
               <Link className="nav_link" to="/posts">View All Posts</Link>
               &nbsp;

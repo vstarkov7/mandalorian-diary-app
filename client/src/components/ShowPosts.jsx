@@ -23,7 +23,6 @@ class ShowPosts extends Component {
       <div>
         {this.state.isLoaded
           ?
-          // <h1>Loaded</h1>
           this.props.posts.map(post => (
             <div key={post.id}>
               {this.state.isEdit === post.id
@@ -57,18 +56,10 @@ class ShowPosts extends Component {
                 <div className="show_post">
                   <h3>{post.title}</h3>
                   <p>{post.content}</p>
-                  {/* {this.props.findTopics(post).map(async topic => (
-                    <div key={topic.id}>
-                      <p>{topic.name}</p>
-                    </div>
-                  )
-                  )} */}
                   <div className="post_options">
                     <Link to={`/posts/add-topic`} onClick={() => { this.props.getPostItem(post.id); this.props.findTopics(post.id) }}>Add/View Topics</Link>
                     <button onClick={() => {
-                      // the edit form data is preset using the setFoodForm function and the current foods data 
                       this.props.setPostForm(post);
-                      // then we set isEdit in state to the current foods id
                       this.setState({
                         isEdit: post.id
                       })
@@ -84,15 +75,6 @@ class ShowPosts extends Component {
 
           :
           <h1>Loading</h1>
-          // this.state.posts.map(post => (
-          //   <div key={post.id}>
-          //     <h1>{post.title}</h1>
-          //     <p>{post.content}</p>
-          //     <br />
-          //   </div>
-          // )
-
-          // )
 
         }
       </div>
