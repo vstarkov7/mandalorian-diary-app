@@ -57,9 +57,13 @@ Javascript, REACT.js, RESTful APIs, Ruby on Rails, HTML, CSS (Material UI for po
 
 For user:
 
-GET /users/:id - select a user.
-
 POST /users/ - create a user.
+
+For auth:
+
+POST /auth/login - login to site.
+
+GET /auth/verify - verify the user.
 
 For entries:
 
@@ -77,15 +81,15 @@ For topics:
 
 GET /topics - select all topics.
 
-POST /topics - create a new topic.
-
 GET /topics/:id - select a topic.
 
 PUT /topics/:id - update a topic.
 
-DELETE /topics/:id - delete a topic
+For users and topics:
 
-GET /users/:user_id/posts/:post_id/topics/ - get all topics of a post
+GET /topics/:topic_id/posts/:id - add topic to user.
+
+GET /topics/posts/:id - find all topics associated with a post.
 
 ## Explanation of Major Challenges Expected
 
@@ -111,3 +115,8 @@ For Material UI, I worked with it a bit for P3, but still don't have enough expe
 	| Making Everything Pretty with CSS | H | 12 hrs|    |
 	| Total                             | H | 31hrs| hrs | 
 	 
+
+## Deployed Site
+
+
+
