@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+  SECRET_KEY = Rails.env == 'production' ? ENV['SECRET_KEY'] :
   SECRET_KEY = Rails.application.secrets.secret_key_base.to_s
 
   def encode(payload, exp = 24.hours.from_now)
@@ -23,5 +24,5 @@ class ApplicationController < ActionController::API
       render json: { errors: e.message }, status: :unauthorized
     end
   end
-  
+
 end

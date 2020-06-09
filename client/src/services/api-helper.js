@@ -1,7 +1,12 @@
 const axios = require('axios');
 
+const baseURLAdress = process.env.NODE_ENV === 'production' ?
+  'https://mandalorian-diary-app.herokuapp.com/'
+  :
+  'http://localhost:3000';
+
 const api = axios.create({
-  baseURL: 'http://localhost:3000'
+  baseURL: baseURLAdress
 })
 
 export const loginUser = async (loginData) => {
