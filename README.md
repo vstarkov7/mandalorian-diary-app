@@ -164,21 +164,21 @@ netlify deploy --dir=build --prod
 
 ## Helper Functions
 
-	| Function | Description | 
-	| --- | :---: |  
-	| loginUser | This will login the user | 
-	| registerUser | This will register the user | 
-	| verifyUser | This will verify the logged in user | 
-	| removeToken | This will remove the auth token to log the user out | 
-	| readAllTopic | This will get all topics from the database | 
-	| readOneTopic | This will get a specific topic by id | 
-	| putPostTopic | This will associate a post with a topic | 
-	| findPostTopics | This will find all topics associated with a post | 
-	| readAllPost | This will get all posts from the database | 
-	| readOnePost | This will get a specific post by id | 
-	| createPost | This will create a new post | 
-	| updatePost | This will update the post | 
-	| destroyPost | This will delete the post | 
+	 Function | Description  
+	 --- | :---:   
+	 loginUser | This will login the user  
+	 registerUser | This will register the user  
+	 verifyUser | This will verify the logged in user  
+	 removeToken | This will remove the auth token to log the user out  
+	 readAllTopic | This will get all topics from the database  
+	 readOneTopic | This will get a specific topic by id  
+	 putPostTopic | This will associate a post with a topic  
+	 findPostTopics | This will find all topics associated with a post  
+	 readAllPost | This will get all posts from the database  
+	 readOnePost | This will get a specific post by id  
+	 createPost | This will create a new post  
+	 updatePost | This will update the post  
+	 destroyPost | This will delete the post 
 
 ## Code
 
