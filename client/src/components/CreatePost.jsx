@@ -29,7 +29,7 @@ class CreatePost extends Component {
             type="text"
             value={this.props.formData.content}
             onChange={this.props.handleChange} />
-          <button>Submit</button>
+          <button onClick={this.props.handleSubmitPost}>Submit</button>
         </form>
       </div>
     )

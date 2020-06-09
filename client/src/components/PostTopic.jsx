@@ -47,7 +47,8 @@ class PostTopic extends Component {
                 </select>
                 <button onClick={() => {
                   // addFlavorToFood takes the current food item and form data from app.js state to send to the API
-                  this.props.addTopicToPost(this.props.postItem)
+                this.props.addTopicToPost(this.props.postItem); 
+                this.props.handleSubmitPost();
                 }}>Submit</button>
               </div>
               :

@@ -145,12 +145,14 @@ class App extends Component {
   handleLogin = async () => {
     const currentUser = await loginUser(this.state.authFormData);
     this.setState({ currentUser })
+    this.props.history.push("/")
   }
 
   handleRegister = async (e) => {
     e.preventDefault();
     const currentUser = await registerUser(this.state.authFormData);
     this.setState({ currentUser })
+    this.props.history.push("/")
   }
 
   handleVerify = async () => {
@@ -166,6 +168,11 @@ class App extends Component {
       currentUser: null
     })
     removeToken();
+    this.props.history.push("/")
+  }
+
+  handleSubmitPost = () => {
+    this.props.history.push("/posts")
   }
 
   authHandleChange = (e) => {
@@ -190,7 +197,7 @@ class App extends Component {
             <div>
               {/* This is a greeting to the user if there user info has been set in state.
               We use the guard operator to check '&&' */}
-              <div className="welcome">Hi {this.state.currentUser.first_name && this.state.currentUser.email}<button className="logout_button" onClick={this.handleLogout}>Logout</button></div>
+              <div className="welcome">Hi {this.state.currentUser.email && this.state.currentUser.first_name}!<button className="logout_button" onClick={this.handleLogout}>Logout</button></div>
               <Link className="nav_link" to="/posts">View All Posts</Link>
               &nbsp;
               <Link className="nav_link" to="/create-post">Create a New Post</Link>
@@ -230,6 +237,7 @@ class App extends Component {
           />)} />
         <Route exact path="/create-post" render={(props) => (
           <CreatePost
+            handleSubmitPost={this.handleSubmitPost}
             user={this.state.currentUser}
             posts={this.state.posts}
             formData={this.state.postFormData}
@@ -247,6 +255,7 @@ class App extends Component {
         )} />
         <Route exact path="/posts/add-topic" render={(props) => (
           <PostTopic
+            handleSubmitPost={this.handleSubmitPost}
             getTopics={this.getTopics}
             postItem={this.state.postItem}
             topics={this.state.topics}
