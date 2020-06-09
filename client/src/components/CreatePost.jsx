@@ -14,6 +14,7 @@ class CreatePost extends Component {
         <form onSubmit={(e) => {
           e.preventDefault();
           this.props.handleSubmit();
+          this.props.handleSubmitPost();
         }}>
           <label className="create_post">Enter post title</label>
           <input
@@ -29,7 +30,7 @@ class CreatePost extends Component {
             type="text"
             value={this.props.formData.content}
             onChange={this.props.handleChange} />
-          <button onClick={this.props.handleSubmitPost}>Submit</button>
+          <button>Submit</button>
         </form>
       </div>
     )
