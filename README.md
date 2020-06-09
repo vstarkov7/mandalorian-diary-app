@@ -165,7 +165,7 @@ netlify deploy --dir=build --prod
 ## Helper Functions
 
 	 Function | Description  
-	 --- | :---:   
+	 ------------ | -------------  
 	 loginUser | This will login the user  
 	 registerUser | This will register the user  
 	 verifyUser | This will verify the logged in user  
