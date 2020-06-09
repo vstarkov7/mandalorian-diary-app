@@ -49,9 +49,7 @@ If a user clicks on the Edit link for any of their entries, they will see the Ed
 
 ## ERD
 
-Update: decided to call the "Entry" model "Post" instead in production.
-
-![The ERD Diagram for the app](https://i.imgur.com/kuXtXuL.png)
+![The ERD Diagram for the app](https://i.imgur.com/z6X5LOP.png)
 
 ## Technologies Used
 
