@@ -182,7 +182,7 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <Link to="/"><h1>Mandalorian Diary App</h1></Link>
+          <Link className="main_title_link" to="/"><h1>Mandalorian Diary App</h1></Link>
           {/* Here we use a terinary to check if there is a logged in user set in state.
               If there is no logged in user, we show a login button instead of the site nav */}
           {this.state.currentUser
@@ -247,6 +247,7 @@ class App extends Component {
         )} />
         <Route exact path="/posts/add-topic" render={(props) => (
           <PostTopic
+            getTopics={this.getTopics}
             postItem={this.state.postItem}
             topics={this.state.topics}
             foundTopics={this.state.foundTopics}

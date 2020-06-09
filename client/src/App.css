@@ -7,6 +7,9 @@
   pointer-events: none;
 }
 
+.main_title_link {
+  text-decoration: none;
+}
 .login {
   display: flex;
   flex-flow: column;

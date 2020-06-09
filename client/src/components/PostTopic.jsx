@@ -8,7 +8,9 @@ class PostTopic extends Component {
       isAdd: false
     }
   }
-
+  async componentDidMount() {
+    await this.props.getTopics
+  }
   render() {
     return (
       <div>
