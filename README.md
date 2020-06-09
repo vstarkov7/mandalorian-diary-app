@@ -105,20 +105,20 @@ For Material UI, I worked with it a bit for P3, but still don't have enough expe
 
 ## Timeframes
 
-	| Component | Priority | Estimated Time | Actual Time |
-	| --- | :---: |  :---: | :---: | 
-	| Setting up Models                 | H | 2hrs| 6hrs |
-	| Setting up Routes                 | H | 2hrs| 6hrs |
-	| Setting up Auth                   | H | 2hrs| 4hrs |
-	| Testing Back End                  | H | 2hrs| 6hrs |
-	| Starting the React App            | H | 1hrs| 2hrs | 
-	| Working on the App.js file        | H | 2hrs| 5hrs |
-	| Working on the components         | H | 4hrs| 5hrs |
-	| Setting up Axios and API          | H | 2hrs| 4hrs |
-	| Testing React App                 | H | 2hrs| 4hrs |
-	| Making Everything Pretty with CSS | H | 12 hrs|12hrs |
-	| Deployment                        | H | 3 hrs| 5hrs  |
-	| Total                             | H | 34hrs| 57hrs  | 
+Component | Priority | Estimated Time | Actual Time 
+--------- | -------- | -------------- | ----------- 
+Setting up Models                 | H | 2hrs| 6hrs
+Setting up Routes                 | H | 2hrs| 6hrs
+Setting up Auth                   | H | 2hrs| 4hrs
+Testing Back End                  | H | 2hrs| 6hrs
+Starting the React App            | H | 1hrs| 2hrs
+Working on the App.js file        | H | 2hrs| 5hrs
+Working on the components         | H | 4hrs| 5hrs
+Setting up Axios and API          | H | 2hrs| 4hrs
+Testing React App                 | H | 2hrs| 4hrs
+Making Everything Pretty with CSS | H | 12 hrs|12hrs
+Deployment                        | H | 3 hrs| 5hrs
+Total                             | H | 34hrs| 57hrs
 	 
 
 ## Deployed Site
