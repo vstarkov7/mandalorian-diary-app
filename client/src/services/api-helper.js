@@ -59,11 +59,6 @@ export const findPostTopics = async (id) => {
   return res.data
 }
 
-// export const createTopic = async (topicData) => {
-//   const res = await api.post('/topics', { topic: topicData });
-//   return res.data
-// }
-
 export const readAllPost = async (id) => {
   const res = await api.get(`/users/${id}/posts`);
   return res.data;
