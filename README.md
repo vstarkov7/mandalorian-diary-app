@@ -184,6 +184,8 @@ destroyPost | This will delete the post
 
 I am proud of the following code snippet because, while it may have been a silly sort of mistake, it did take me some time to get this code snippet to work right. Somehow, only one key-value pair was created in the database, either only the title or the content of the post. It took some time to realize I need to use prevState so that I can have more than one key-value pair in the state variable that will be used to send the data to the database.
 
+Also, I needed the user id in order to create the topic and I found using the currentUser state variable to be very helpful for this.
+
 ```
   addPost = async () => {
     const newPost = await createPost(this.state.postFormData, this.state.currentUser.id)
