@@ -15,7 +15,7 @@ class CreatePost extends Component {
           e.preventDefault();
           this.props.handleSubmit();
           this.props.handleSubmitPost();
-        }}>
+        }}>   
           <label className="create_post">Enter post title</label>
           <input
             className="create_post"

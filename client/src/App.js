@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import './App.css';
-import PostsIndex from './components/PostsIndex.jsx'
 import PostTopic from './components/PostTopic.jsx'
 import Register from './components/Register.jsx'
 import Login from './components/Login.jsx'
@@ -244,11 +243,7 @@ class App extends Component {
             setPostForm={this.setPostForm}
             updatePost={this.updatePost}
           />)} />
-        <Route path='/topics' render={() => (
-          <PostsIndex
-            posts={this.state.posts}
-          />
-        )} />
+
         <Route exact path="/posts/add-topic" render={(props) => (
           <PostTopic
             handleSubmitPost={this.handleSubmitPost}
